@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import pokemon_logo from '../../assets/pokemon_logo.png'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -10,9 +11,9 @@ const Navbar = () => {
       </div>
       <div className='nav-menu'>
         <ul className='nav-list'>
-          <li className='nav-item'>Home</li>
-          <li className='nav-item'>Browse</li>
-          <li className='nav-item'>Trivia</li>
+          <Link to='/' className='nav-item'>Home</Link>
+          <Link to='/browse' className='nav-item'>Browse</Link>
+          <Link to='/trivia' className='nav-item'>Trivia</Link>
         </ul>
       </div>
     </div>
