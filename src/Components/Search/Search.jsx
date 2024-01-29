@@ -1,8 +1,8 @@
 import React from "react";
 import "./Search.css";
-import pokemon_background from "../../../assets/pokemon_background.png";
-import pokemon_pin from "../../../assets/pokemon_pin.png";
-import search_icon from "../../../assets/search_icon.png";
+import pokemon_background from "../../assets/pokemon_background.png";
+import pokemon_pin from "../../assets/pokemon_pin.png";
+import search_icon from "../../assets/search_icon.png";
 
 const Search = () => {
   return (
@@ -15,7 +15,7 @@ const Search = () => {
         <input
           className="search-input"
           type="text"
-          maxlength="20"
+          maxLength="20"
           placeholder="Search a Pokémon!"
         />
         <button className="search-button">

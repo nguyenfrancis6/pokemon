@@ -15,7 +15,6 @@ body{
   margin: 0 auto;
   padding: 0px 15px;
 }
-
 .nav-list {
   display: flex;
   list-style-type: none;
@@ -31,4 +30,8 @@ body{
 
 .nav-logo-img {
   max-width: 150px;
+}
+
+hr {
+  border: 1px white solid;
 }
