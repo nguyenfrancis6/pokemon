@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Browse = () => {
+const Browse = ({ pokemon }) => {
   return (
-    <div>Browse</div>
+    <div>
+      {pokemon.map(p => <div>{p}</div>)}
+    </div>
   )
 }
 
