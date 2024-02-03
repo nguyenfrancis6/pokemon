@@ -8,8 +8,10 @@
 .buttons button {
   border: none;
   margin: 0 5px;
-  width: 60px;
+  width: 80px;
   padding: 10px 5px;
   border-radius: 15px;
+  cursor: pointer;
+  font-weight: 700;
 }
 

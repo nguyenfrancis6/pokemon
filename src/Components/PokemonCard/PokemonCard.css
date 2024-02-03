@@ -1,4 +1,38 @@
 .card{
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0px;
+  width: 150px;
+  height: 135px;
+}
+
+.card-bottom{
+  border: 1px black solid;
+  padding: 5px 0px;
+  background: pink;
+}
+
+.card-top{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background: linear-gradient(#9198e5, #e66465);
+  height: 140px;
+}
+
+.card-top h2{
+  font-weight: 500;
+}
+
+.card-top p{
+  margin-top: -25px;
+  padding-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-top img {
+  height: 110px;
+  padding-bottom: 10px;
+  object-fit: contain;
 }

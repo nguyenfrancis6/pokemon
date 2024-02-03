@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import bulbasaur from '../../assets/bulbasaur.png'
-import insta from '../../assets/insta.png'
+import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
 
 const Footer = () => {
@@ -14,7 +14,7 @@ const Footer = () => {
           <img src={bulbasaur} alt="" />
         </div>
         <div className="footer-media">
-          <a rel='noopener noreferrer' href="https://www.instagram.com/franciss_nguyen/" target='_blank'><img src={insta} alt="" /></a>
+          <a rel='noopener noreferrer' href="https://www.linkedin.com/in/francis-nguyen-0a6902208/" target='_blank'><img src={linkedin} alt="" /></a>
           <a rel='noopener noreferrer' href="https://github.com/nguyenfrancis6" target='_blank'><img src={github} alt="" /></a>
         </div>
         <hr />

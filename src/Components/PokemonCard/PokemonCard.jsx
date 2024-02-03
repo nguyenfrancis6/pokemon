@@ -11,9 +11,9 @@ const PokemonCard = ({ pokemon, loading, infoPokemon }) => {
           return (
             <div className="card" key={item.id} onClick={() => infoPokemon(item)}>
               <div className="card-top">
-                <h1>{item.id}</h1>
-                <img src={item.sprites.front_default} alt="" />
-                <p>{item.name}</p>
+                <h2>{item.id}</h2>
+                <img src={item.sprites.front_default ? item.sprites.front_default : item.sprites.other.home.front_default} alt="" />
+                <p>{item.name[0].toUpperCase() + item.name.substring(1)}</p>
               </div>
               <div className="card-bottom">
                 Type Placeholder
