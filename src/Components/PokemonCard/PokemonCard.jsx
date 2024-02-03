@@ -16,7 +16,7 @@ const PokemonCard = ({ pokemon, loading, infoPokemon }) => {
                 <p>{item.name}</p>
               </div>
               <div className="card-bottom">
-
+                Type Placeholder
               </div>
             </div>
           );

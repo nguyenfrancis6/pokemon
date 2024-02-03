@@ -4,13 +4,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import axios from "axios";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home";
 import Browse from "./Pages/Browse";
 import Trivia from "./Pages/Trivia";
 import Footer from "./Components/Footer/Footer";
-import { useEffect, useState } from "react";
 
 function App() {
 

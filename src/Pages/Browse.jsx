@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Pagination from '../Components/Pagination/Pagination'
 import PokemonCard from '../Components/PokemonCard/PokemonCard'
+import './Browse.css'
 
 const Browse = () => {
   const [currentPageUrl, setCurrentPageUrl] = useState('https://pokeapi.co/api/v2/pokemon')
@@ -39,10 +40,12 @@ const Browse = () => {
   }
 
   function goToNextPage() {
+    setPokeData([])
     setCurrentPageUrl(nextPageUrl)
   }
 
   function goToPrevPage() {
+    setPokeData([])
     setCurrentPageUrl(prevPageUrl)
   }
 
@@ -51,7 +54,9 @@ const Browse = () => {
 
   return (
     <div>
-      <PokemonCard pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokedex(poke)}/>
+      <div className="card-container">
+        <PokemonCard className='card' pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokedex(poke)}/>
+      </div>
       <Pagination goToNextPage={nextPageUrl ? goToNextPage : null} goToPrevPage={prevPageUrl ? goToPrevPage : null}/>
     </div>
   )
