@@ -34,11 +34,13 @@ const Browse = () => {
     setCurrentPageUrl(prevPageUrl)
   }
 
+  if (loading) return 'Loading...'
+
 
   return (
     <div>
       {pokemon.map(p => <div key={p.name}>{p}</div>)}
-      <Pagination goToNextPage={goToNextPage} goToPrevPage={goToPrevPage}/>
+      <Pagination goToNextPage={nextPageUrl ? goToNextPage : null} goToPrevPage={prevPageUrl ? goToPrevPage : null}/>
     </div>
   )
 }
