@@ -1,0 +1,15 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.buttons button {
+  border: none;
+  margin: 0 5px;
+  width: 60px;
+  padding: 10px 5px;
+  border-radius: 15px;
+}
+
