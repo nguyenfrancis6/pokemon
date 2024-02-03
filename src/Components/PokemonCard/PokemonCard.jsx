@@ -16,7 +16,8 @@ const PokemonCard = ({ pokemon, loading, infoPokemon }) => {
                 <p>{item.name[0].toUpperCase() + item.name.substring(1)}</p>
               </div>
               <div className="card-bottom">
-                Type Placeholder
+                {item.types[0].type.name[0].toUpperCase() + item.types[0].type.name.substring(1)}
+                {item.types[1] ? '/' + item.types[1].type.name[0].toUpperCase() + item.types[1].type.name.substring(1) : null}
               </div>
             </div>
           );

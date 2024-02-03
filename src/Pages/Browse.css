@@ -4,3 +4,9 @@
   max-width: 1500px;
   margin: 0 auto;
 }
+
+.title {
+  text-align: center;
+  margin: 10px 0;
+  color: rgb(248, 209, 209);
+}

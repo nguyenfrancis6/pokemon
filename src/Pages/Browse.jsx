@@ -54,7 +54,7 @@ const Browse = () => {
 
   return (
     <div>
-      <h1>Look through all the pokemon!</h1>
+      <h1 className='title'>View All Pokémon!</h1>
       <div className="card-container">
         <PokemonCard className='card' pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokedex(poke)}/>
       </div>
