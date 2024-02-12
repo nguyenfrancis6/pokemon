@@ -5,16 +5,10 @@
   height: 135px;
 }
 
-.card-bottom{
-  border: 1px black solid;
-  padding: 5px 0px;
-  background: pink;
-}
-
 .card-top{
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 2px solid black;
   background: linear-gradient(#9198e5, #e66465);
   height: 140px;
 }
@@ -35,4 +29,11 @@
   height: 110px;
   padding-bottom: 10px;
   object-fit: contain;
+}
+
+.card-bottom{
+  border: 2px black solid;
+  padding: 5px 0px;
+  background: pink;
+  border-top: none;
 }

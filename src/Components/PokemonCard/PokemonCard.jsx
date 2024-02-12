@@ -1,7 +1,7 @@
 import React from "react";
 import "./PokemonCard.css";
 
-const PokemonCard = ({ pokemon, loading, infoPokemon }) => {
+const PokemonCard = ({ pokemon, loading }) => {
   return (
     <>
       {loading ? (
@@ -9,7 +9,7 @@ const PokemonCard = ({ pokemon, loading, infoPokemon }) => {
       ) : (
         pokemon.map((item) => {
           return (
-            <div className="card" key={item.id} onClick={() => infoPokemon(item)}>
+            <div className="card" key={item.id}>
               <div className="card-top">
                 <h2>{item.id}</h2>
                 <img src={item.sprites.front_default ? item.sprites.front_default : item.sprites.other.home.front_default} alt="" />
