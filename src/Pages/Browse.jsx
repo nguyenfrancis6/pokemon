@@ -39,12 +39,12 @@ const Browse = () => {
     });
   };
 
-  function goToNextPage() {
+  function goToNextPage(e) {
     setPokeData([]);
     setCurrentPageUrl(nextPageUrl);
   }
 
-  function goToPrevPage() {
+  function goToPrevPage(e) {
     setPokeData([]);
     setCurrentPageUrl(prevPageUrl);
   }
@@ -57,14 +57,16 @@ const Browse = () => {
       {loading ? (
         <div className="loader"></div>
       ) : (
+        <>
         <div className="card-container">
           <PokemonCard className="card" pokemon={pokeData} loading={loading} />
         </div>
+        <Pagination
+          goToNextPage={nextPageUrl ? goToNextPage : null}
+          goToPrevPage={prevPageUrl ? goToPrevPage : null}
+        />
+        </>
       )}
-      <Pagination
-        goToNextPage={nextPageUrl ? goToNextPage : null}
-        goToPrevPage={prevPageUrl ? goToPrevPage : null}
-      />
     </div>
   );
 };
