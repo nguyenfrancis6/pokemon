@@ -1,17 +1,37 @@
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  height: 52px;
 }
 
 .buttons button {
-  border: none;
-  margin: 0 5px;
-  width: 80px;
-  padding: 10px 5px;
-  border-radius: 15px;
   cursor: pointer;
-  font-weight: 700;
+  width: 60px;
+  padding: 10px 0px;
 }
 
+.forward-arrow {
+  transform: scaleX(-1);
+}
+
+.buttons img {
+  height: 25px;
+  width: 30px;
+}
+
+/* keep buttons in same position when one button is not appearing (beginning and end) */
+
+.next-button {
+  position: absolute; 
+  right: 0;
+}
+
+.prev-button{
+  position: absolute;
+  left: 0;
+}

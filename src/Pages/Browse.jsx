@@ -4,7 +4,6 @@ import axios from "axios";
 import Pagination from "../Components/Pagination/Pagination";
 import PokemonCard from "../Components/PokemonCard/PokemonCard";
 import "./styles/Browse.css";
-import spinner from "../assets/loading-spinner.svg";
 
 const Browse = () => {
   const [currentPageUrl, setCurrentPageUrl] = useState(
@@ -49,8 +48,6 @@ const Browse = () => {
     setCurrentPageUrl(prevPageUrl);
   }
 
-  // if (loading) return 'Loading...'
-
   return (
     <div>
       <h1 className="title">View All Pokémon!</h1>
@@ -58,13 +55,13 @@ const Browse = () => {
         <div className="loader"></div>
       ) : (
         <>
-        <div className="card-container">
-          <PokemonCard className="card" pokemon={pokeData} loading={loading} />
-        </div>
         <Pagination
           goToNextPage={nextPageUrl ? goToNextPage : null}
           goToPrevPage={prevPageUrl ? goToPrevPage : null}
         />
+        <div className="card-container">
+          <PokemonCard className="card" pokemon={pokeData} loading={loading} />
+        </div>
         </>
       )}
     </div>

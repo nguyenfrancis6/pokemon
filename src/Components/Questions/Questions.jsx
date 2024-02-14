@@ -25,6 +25,8 @@ const Questions = () => {
     {question: "Which 3 legendary pokemon are referred to as 'The Weather Trio'?", answer: "Rayquaza, Kyogre, Groudon"}
   ]
 
+    
+
   return (
     <div className='trivia'>
       <div className="question"></div>
