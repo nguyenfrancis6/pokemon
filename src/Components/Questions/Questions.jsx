@@ -1,7 +1,29 @@
 import React from 'react'
 import './Questions.css'
+import { useState, useEffect } from 'react'
+import triviaImage from '../../assets/trivia.png'
 
 const Questions = () => {
+
+  const [answer, setAnswer] = useState()
+  const [question, setQuestion] = useState()
+  const [textHidden, setTextHidden] = useState(true)
+
+  useEffect(() => {
+    randomQuestion()
+  }, [])
+
+  function randomQuestion() {
+    const question = info[Math.floor(Math.random() * info.length)]
+    setQuestion(question.question)
+    setAnswer(question.answer)
+  }
+
+  function reset() {
+    randomQuestion()
+    setTextHidden(true)
+  }
+  
   const info = [
     {question: 'What was the first Pokémon that Ash catched?', answer: 'Caterpie'},
     {question: 'Which legendary bird did Ash see first?', answer: 'Ho-Oh'},
@@ -25,14 +47,19 @@ const Questions = () => {
     {question: "Which 3 legendary pokemon are referred to as 'The Weather Trio'?", answer: "Rayquaza, Kyogre, Groudon"}
   ]
 
-    
-
   return (
-    <div className='trivia'>
-      <div className="question"></div>
-      <div className="answer"></div>
-      <button className="reveal">Reveal Answer</button>
+    <>
+    <div className='header'>
+      <h1>PokéTrivia</h1>
+      <img src={triviaImage} alt="" />
     </div>
+    <div className='trivia'>
+      <div className="question">{question}</div>
+      <div className="answer">{textHidden ? '' : answer}</div>
+      <button className="reveal" onClick={() => setTextHidden(!textHidden)}>Reveal Answer</button>
+      <button className='generate' onClick={() => reset()}>Generate another question</button>
+    </div>
+    </>
   )
 }
 
