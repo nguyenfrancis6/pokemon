@@ -4,9 +4,10 @@ import pokemon_logo from "../../assets/pokemon_logo.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
   return (
     <>
-      <div className="nav">
+      <nav className="nav">
         <div className="nav-logo">
           <img className="nav-logo-img" src={pokemon_logo} alt="" />
         </div>
@@ -23,7 +24,7 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-      </div>
+      </nav>
       <hr />
     </>
   );

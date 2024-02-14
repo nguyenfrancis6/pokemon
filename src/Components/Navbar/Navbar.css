@@ -2,10 +2,6 @@ html {
   min-height: 100%;
 }
 
-body{
-  background: linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))
-}
-
 .nav {
   max-width: 1500px;
   height: 100px;

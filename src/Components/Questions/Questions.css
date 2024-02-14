@@ -17,9 +17,6 @@ button {
 .question{
   margin: 10px 0;
   text-align: center;
-  background: linear-gradient(#a0c5f5, #e2e2e7);
-  padding: 15px;
-  border-radius: 10px;
 }
 
 .answer{ 
