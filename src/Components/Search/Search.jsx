@@ -15,7 +15,7 @@ const Search = () => {
         <input
           className="search-input"
           type="text"
-          maxLength="20"
+          maxLength="30"
           placeholder="Search a Pokémon!"
         />
         <button className="search-button">
