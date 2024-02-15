@@ -3,11 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 500px;
   max-width: 800px;
   margin: 0 auto;
   font-size: 32px;
-  margin-top: -110px;
+  margin-top: -50px;
 }
 
 button {
@@ -15,7 +15,7 @@ button {
 }
 
 .question{
-  margin: 10px 0;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -38,6 +38,8 @@ button {
 
 .header img {
   margin-top: 30px;
+  max-width: 500px;
+  margin-bottom: -15px;
 }
 
 .trivia button {

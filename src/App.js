@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "./Components/Navbar/Navbar";
+import './Components/Navbar/Navbar.css'
 import Home from "./Pages/Home";
 import Browse from "./Pages/Browse";
 import Trivia from "./Pages/Trivia";

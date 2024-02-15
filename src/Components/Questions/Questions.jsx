@@ -1,7 +1,7 @@
 import React from 'react'
 import './Questions.css'
 import { useState, useEffect } from 'react'
-import triviaImage from '../../assets/trivia.png'
+import triviaImage from '../../assets/trivia2.jpg'
 
 const Questions = () => {
 
