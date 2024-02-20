@@ -1,0 +1,56 @@
+.container{
+  display: flex;
+  width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px black solid;
+  margin-top: 30px;
+  height: 300px;
+}
+
+.container-left{
+  width: 40%;
+  text-align: center;
+}
+
+.container-right{
+  width: 60%;
+  text-align: center;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border-left: 1px solid black;
+}
+
+.container-right ul{
+  list-style-type: none;
+}
+
+.container-right-top{
+  display: flex;
+  height: 50%;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+
+.name{
+  width: 50%;
+}
+
+.abilities{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-left:1px solid black;
+  height: 100%;
+  justify-content: center;
+}
+
+.stats{
+  height: 50%;
+  text-align: left;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}

@@ -8,26 +8,40 @@ const PokeStats = ({ pokemon, loading }) => {
         <img src={pokemon.sprites.front_default} alt="" />
       </div>
       <div className="container-right">
-        <p>Name: {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}</p>
-        <p>
-          Type: {pokemon.types[0].type.name[0].toUpperCase() +
-            pokemon.types[0].type.name.substring(1)}
-          {pokemon.types[1]
-            ? "/" +
-              pokemon.types[1].type.name[0].toUpperCase() +
-              pokemon.types[1].type.name.substring(1)
-            : null}
-        </p>
-        <p>Abilities: {pokemon.abilities.map((abilityArray) => abilityArray.ability.name + '/')}</p>
-        <p>Stats</p>
-        <ul>
-          <li>{pokemon.stats[0].stat.name[0].toUpperCase() + pokemon.stats[0].stat.name.substring(1)}: {pokemon.stats[0].base_stat}</li>
-          <li>{pokemon.stats[1].stat.name[0].toUpperCase() + pokemon.stats[1].stat.name.substring(1)}: {pokemon.stats[1].base_stat}</li>
-          <li>{pokemon.stats[2].stat.name[0].toUpperCase() + pokemon.stats[2].stat.name.substring(1)}: {pokemon.stats[2].base_stat}</li>
-          <li>{pokemon.stats[3].stat.name[0].toUpperCase() + pokemon.stats[3].stat.name.substring(1)}: {pokemon.stats[3].base_stat}</li>
-          <li>{pokemon.stats[4].stat.name[0].toUpperCase() + pokemon.stats[4].stat.name.substring(1)}: {pokemon.stats[4].base_stat}</li>
-          <li>{pokemon.stats[5].stat.name[0].toUpperCase() + pokemon.stats[5].stat.name.substring(1)}: {pokemon.stats[5].base_stat}</li>
-        </ul>
+        <div className="container-right-top">
+        <div className="name">
+          <p>
+            {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}
+            <p>
+            {pokemon.types[0].type.name[0].toUpperCase() +
+              pokemon.types[0].type.name.substring(1)}
+            {pokemon.types[1]
+              ? "/" +
+                pokemon.types[1].type.name[0].toUpperCase() +
+                pokemon.types[1].type.name.substring(1)
+              : null}
+          </p>
+          </p>
+        </div>
+        <div className="abilities">
+          <p>Abilities </p>
+          <ul>
+            {pokemon.abilities.map((abilityArray) => (
+              <li>{abilityArray.ability.name[0].toUpperCase() + abilityArray.ability.name.substring(1)}</li>
+            ))}
+          </ul>
+        </div>
+        </div>
+        <div className="stats">
+          <ul>
+            <li>HP: {pokemon.stats[0].base_stat}</li>
+            <li>Atk: {pokemon.stats[1].base_stat}</li>
+            <li>Def: {pokemon.stats[2].base_stat}</li>
+            <li>Sp Atk: {pokemon.stats[3].base_stat}</li>
+            <li>Sp Def: {pokemon.stats[4].base_stat}</li>
+            <li>Spe: {pokemon.stats[5].base_stat}</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
