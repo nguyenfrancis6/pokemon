@@ -6,31 +6,33 @@ const PokeStats = ({ pokemon, loading }) => {
     <div className="container">
       <div className="container-left">
         <img src={pokemon.sprites.front_default} alt="" />
+        <p>{pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}</p>
       </div>
       <div className="container-right">
         <div className="container-right-top">
-        <div className="name">
-          <p>
-            {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}
+          <div className="types">
+            <p className="type-label">Type</p>
             <p>
-            {pokemon.types[0].type.name[0].toUpperCase() +
-              pokemon.types[0].type.name.substring(1)}
-            {pokemon.types[1]
-              ? "/" +
-                pokemon.types[1].type.name[0].toUpperCase() +
-                pokemon.types[1].type.name.substring(1)
-              : null}
-          </p>
-          </p>
-        </div>
-        <div className="abilities">
-          <p>Abilities </p>
-          <ul>
-            {pokemon.abilities.map((abilityArray) => (
-              <li>{abilityArray.ability.name[0].toUpperCase() + abilityArray.ability.name.substring(1)}</li>
-            ))}
-          </ul>
-        </div>
+              {pokemon.types[0].type.name[0].toUpperCase() +
+                pokemon.types[0].type.name.substring(1)}
+              {pokemon.types[1]
+                ? "/" +
+                  pokemon.types[1].type.name[0].toUpperCase() +
+                  pokemon.types[1].type.name.substring(1)
+                : null}
+            </p>
+          </div>
+          <div className="abilities">
+            <p>Abilities</p>
+            <ul>
+              {pokemon.abilities.map((abilityArray) => (
+                <li>
+                  {abilityArray.ability.name[0].toUpperCase() +
+                    abilityArray.ability.name.substring(1)}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="stats">
           <ul>

@@ -11,7 +11,7 @@ import pokemon_logo from "./assets/pokemon_logo.png";
 
 function App() {
   const [color, setColor] = useState(
-    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3)"
+    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
   );
 
   return (
@@ -28,7 +28,7 @@ function App() {
                 className="nav-item"
                 onClick={() =>
                   setColor(
-                    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3)"
+                    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
                   )
                 }
               >
@@ -39,7 +39,7 @@ function App() {
                 className="nav-item"
                 onClick={() =>
                   setColor(
-                    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3)"
+                    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
                   )
                 }
               >
@@ -48,7 +48,7 @@ function App() {
               <Link
                 to="/trivia"
                 className="nav-item"
-                onClick={() => setColor("linear-gradient(#a0c5f5, #e2e2e7)")}
+                onClick={() => setColor("linear-gradient(#6da6f1, #e2e2e7)")}
               >
                 Trivia
               </Link>
