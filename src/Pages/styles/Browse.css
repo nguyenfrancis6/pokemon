@@ -1,7 +1,7 @@
 .card-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
-  max-width: 1500px;
+  max-width: 1300px;
   margin: 0 auto;
   min-height: 700px;
 }
@@ -28,4 +28,31 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1200px){
+  .card-container{
+    max-width: 950px;
+  }
+}
+
+@media (max-width: 1024px){
+  .card-container{
+    max-width: 750px;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+  }
+}
+
+@media (max-width: 800px){
+  .card-container {
+    grid-template-columns: 1fr 1fr 0.5fr;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 500px){
+  .card-container {
+    grid-template-columns: 1fr 0.5fr;
+    max-width: 350px;
+  }
 }

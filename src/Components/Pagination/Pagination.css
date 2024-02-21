@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 30px;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   position: relative;
   height: 52px;
@@ -37,4 +37,28 @@
 .prev-button{
   position: absolute;
   left: 0;
+}
+
+@media (max-width: 1200px) {
+  .buttons {
+    max-width: 950px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .buttons {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 800px) {
+  .buttons {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    max-width: 350px;
+  }
 }
