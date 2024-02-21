@@ -2,6 +2,11 @@ import React from "react";
 import "./PokeStats.css";
 
 const PokeStats = ({ pokemon, loading }) => {
+
+  const calculateStatWidth = (baseStat) => {
+    return (baseStat / 255) * 100 + "%"; // Assuming the maximum base stat value is 255
+  };
+
   return (
     <div className="container">
       <div className="container-left">
@@ -35,16 +40,26 @@ const PokeStats = ({ pokemon, loading }) => {
           </div>
         </div>
         <div className="stats">
-          <ul>
-            <li>HP: {pokemon.stats[0].base_stat}</li>
-            <li>Atk: {pokemon.stats[1].base_stat}</li>
-            <li>Def: {pokemon.stats[2].base_stat}</li>
-            <li>Sp Atk: {pokemon.stats[3].base_stat}</li>
-            <li>Sp Def: {pokemon.stats[4].base_stat}</li>
-            <li>Spe: {pokemon.stats[5].base_stat}</li>
+        <ul>
+            {pokemon.stats.map((stat, index) => (
+              <li key={index}>
+                <div className="stat-info">
+                  <span className="stat-name">
+                    {stat.stat.name[0].toUpperCase() + stat.stat.name.substring(1)}:
+                  </span>{" "}
+                  <span className="stat-value">{stat.base_stat}</span>
+                </div>
+                <div className="stat-bar-container">
+                  <div
+                    className="stat-bar"
+                    style={{ width: calculateStatWidth(stat.base_stat) }}
+                  ></div>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };
