@@ -22,7 +22,6 @@
   height: 120px;
   animation: spin 1.5s linear infinite;
   margin: 275px auto;
-  
 }
 
 @keyframes spin {

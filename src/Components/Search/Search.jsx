@@ -28,7 +28,7 @@ const Search = () => {
     } catch (error) {
       console.error("An error occurred: ", error);
       setErrorMessage("Pokemon doesn't exist or is not found!");
-    }
+    } 
   };
 
   useEffect(() => {
@@ -59,8 +59,7 @@ const Search = () => {
         </button>
       </div>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-      {loading ? <img className="search-image" src={pokemon_background} alt="" /> : <PokeStats pokemon={pokemonData} loading={loading}/>}
-
+      {pokemonData.length === 0 || errorMessage ? <img className="search-image" src={pokemon_background} alt="" /> : (loading ? <div className="loader"></div> : <PokeStats pokemon={pokemonData}/>)}
     </div>
   );
 };

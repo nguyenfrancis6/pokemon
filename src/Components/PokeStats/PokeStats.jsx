@@ -1,10 +1,9 @@
 import React from "react";
 import "./PokeStats.css";
 
-const PokeStats = ({ pokemon, loading }) => {
-
+const PokeStats = ({ pokemon }) => {
   const calculateStatWidth = (baseStat) => {
-    return (baseStat / 255) * 100 + "%"; // Assuming the maximum base stat value is 255
+    return (baseStat / 255) * 100 + "%";
   };
 
   return (
@@ -40,12 +39,14 @@ const PokeStats = ({ pokemon, loading }) => {
           </div>
         </div>
         <div className="stats">
-        <ul>
+          <ul>
             {pokemon.stats.map((stat, index) => (
               <li key={index}>
                 <div className="stat-info">
                   <span className="stat-name">
-                    {stat.stat.name[0].toUpperCase() + stat.stat.name.substring(1)}:
+                    {stat.stat.name[0].toUpperCase() +
+                      stat.stat.name.substring(1)}
+                    :
                   </span>{" "}
                   <span className="stat-value">{stat.base_stat}</span>
                 </div>
@@ -59,7 +60,7 @@ const PokeStats = ({ pokemon, loading }) => {
             ))}
           </ul>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };
