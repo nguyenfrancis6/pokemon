@@ -40,6 +40,10 @@
     max-width: 750px;
     grid-template-columns: 1fr 1fr 1fr 0.5fr;
   }
+
+  .title {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 800px){
@@ -53,5 +57,9 @@
   .card-container {
     grid-template-columns: 1fr 0.5fr;
     max-width: 350px;
+  }
+
+  .title {
+    font-size: 28px;
   }
 }
