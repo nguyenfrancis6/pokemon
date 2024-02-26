@@ -44,8 +44,15 @@ const PokeStats = ({ pokemon }) => {
               <li key={index}>
                 <div className="stat-info">
                   <span className="stat-name">
-                    {stat.stat.name[0].toUpperCase() +
-                      stat.stat.name.substring(1)}
+                    {stat.stat.name.length > 3
+                      ? stat.stat.name === "defense"
+                        ? stat.stat.name[0].toUpperCase() +
+                          stat.stat.name.slice(1, 3)
+                        : stat.stat.name[0].toUpperCase() +
+                          stat.stat.name.slice(1, 2) +
+                          stat.stat.name.slice(-1)
+                      : stat.stat.name[0].toUpperCase() +
+                        stat.stat.name.substring(1)}
                     :
                   </span>{" "}
                   <span className="stat-value">{stat.base_stat}</span>

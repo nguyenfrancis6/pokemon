@@ -37,3 +37,9 @@
   background: pink;
   border-top: none;
 }
+
+@media (max-width: 576px){
+  .card-bottom{
+    display: none;
+  }
+}

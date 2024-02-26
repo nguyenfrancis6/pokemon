@@ -81,13 +81,13 @@
 .stat-info {
   display: flex;
   align-items: center;
-  width: 170px;
+  width: 100px;
 }
 
 .stat-name {
   width: 120px; 
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .stat-value {
@@ -95,7 +95,7 @@
 }
 
 .stat-bar-container {
-  width: 170px;
+  width: 220px;
   display: flex;
   align-items: center;
 }
@@ -104,4 +104,53 @@
   background-color: green;
   height: 8px;
   border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 500px;
+  }
+
+  .stat-bar-container{
+    max-width: 175px;
+  }
+
+  .container-left img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .container-left img {
+    height: 100px;
+  }
+
+  .container-left p {
+    font-size: 20px;
+  }
+
+  .container-right {
+    font-size: 14px;
+  }
+
+  .stat-name {
+    margin-left: 5px;
+  }
+
+  .stat-value {
+    margin-left: -80px;
+  }
+
+  .stat-bar-container{
+    max-width: 75px;
+  }
+
+  .stat-bar {
+    margin-left: -25px;
+  }
 }

@@ -33,7 +33,7 @@
 .search-image{
   margin-top: 100px;
   opacity: 1;
-  width: 1200px;
+  width: 115  0px;
 }
 
 .search-input {
@@ -42,7 +42,7 @@
   border: none;
   border-radius: 25px;
   padding-left: 15px;
-  width: 350px;
+  width: 450px;
   font-size: 16px;
 }
 
@@ -64,4 +64,51 @@
   margin-top: 10px;
   color:azure;
   margin-right: 20px;
+}
+
+@media (max-width: 1200px){
+  .search-image{
+    width: 950px;
+  }
+}
+
+@media (max-width: 1024px){
+  .search-image{
+    width: 800px;
+  }
+
+  .search-top h1{
+    font-size: 36px;
+  }
+
+  .search-input {
+    width: 375px;
+  }
+}
+
+@media (max-width: 800px){
+  .search-image {
+    width: 550px;
+  }
+
+  .search-input{ 
+    width: 350px; 
+  }
+}
+
+@media (max-width: 576px){
+  .search-image {
+    height: 190px; 
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .search-form{
+    max-width: 250px;
+    width: 100%;
+  }
+
+  .search-top h1{
+    font-size: 28px;
+  }
 }
