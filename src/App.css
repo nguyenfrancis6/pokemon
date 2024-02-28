@@ -6,3 +6,26 @@
   font-family: Roboto, sans-serif;
   box-sizing: border-box;
 }
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle img {
+  height: 30px;
+  width: 30px;
+}
+
+@media (max-width: 576px) {
+  .nav-toggle{
+    display: inline-block;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+}
+
+.nav-menu.open {
+  display: block;
+}

@@ -8,11 +8,17 @@ import Trivia from "./Pages/Trivia";
 import Footer from "./Components/Footer/Footer";
 import { Link } from "react-router-dom";
 import pokemon_logo from "./assets/pokemon_logo.png";
+import hamburger from './assets/hamburger.png'
 
 function App() {
   const [color, setColor] = useState(
     "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
   );
+  const [isNavOpen, setIsNavOpen] = useState(false)
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  }
 
   return (
     <div className="App" style={{ background: color }}>
@@ -21,7 +27,10 @@ function App() {
           <div className="nav-logo">
             <img className="nav-logo-img" src={pokemon_logo} alt="" />
           </div>
-          <div className="nav-menu">
+          <button className="nav-toggle" onClick={toggleNav}>
+            <img src={hamburger} alt="hamburger icon"/>
+          </button>
+          <div className={`nav-menu ${isNavOpen ?  'open' : ''}`}>
             <ul className="nav-list">
               <Link
                 to="/"

@@ -24,11 +24,14 @@ const Search = () => {
         `https://pokeapi.co/api/v2/pokemon/${pokemon}`
       );
       setPokemonData(response.data);
-      setLoading(false)
+      setTimeout(() => {
+        setLoading(false)
+      }, (1500))
       setErrorMessage("");
     } catch (error) {
       console.error("An error occurred: ", error);
       setErrorMessage("Pokemon doesn't exist or is not found!");
+      setLoading(false)
     } 
   };
 
