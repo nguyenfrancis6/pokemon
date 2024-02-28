@@ -6,6 +6,7 @@ import search_icon from "../../assets/search_icon.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PokeStats from "../PokeStats/PokeStats";
+import StatSkeleton from "../StatSkeleton/StatSkeleton";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -59,7 +60,7 @@ const Search = () => {
         </button>
       </div>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-      {pokemonData.length === 0 || errorMessage ? <img className="search-image" src={pokemon_background} alt="" /> : (loading ? <div className="loader"></div> : <PokeStats pokemon={pokemonData}/>)}
+      {pokemonData.length === 0 || errorMessage ? <img className="search-image" src={pokemon_background} alt="" /> : (loading ? <StatSkeleton/> : <PokeStats pokemon={pokemonData}/>)}
     </div>
   );
 };

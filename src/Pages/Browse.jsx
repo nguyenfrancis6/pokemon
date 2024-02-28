@@ -14,16 +14,16 @@ const Browse = () => {
   const [loading, setLoading] = useState(true);
   const [pokeData, setPokeData] = useState([]);
 
-  const pokeFun = async () => {
-    setLoading(true);
-    const res = await axios.get(currentPageUrl);
-    setNextPageUrl(res.data.next);
-    setPrevPageUrl(res.data.previous);
-    getPokemon(res.data.results);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const pokeFun = async () => {
+      setLoading(true);
+      const res = await axios.get(currentPageUrl);
+      setNextPageUrl(res.data.next);
+      setPrevPageUrl(res.data.previous);
+      getPokemon(res.data.results);
+      setLoading(false);
+    };
+
     pokeFun();
   }, [currentPageUrl]);
 
