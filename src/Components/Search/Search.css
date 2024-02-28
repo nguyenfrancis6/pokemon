@@ -87,6 +87,10 @@
 }
 
 @media (max-width: 800px){
+  .search {
+    height: 600px;
+  }
+
   .search-image {
     width: 550px;
   }

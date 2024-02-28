@@ -21,6 +21,7 @@ button {
 
 .answer{ 
   margin: 5px 0 20px 0;
+  font-weight: bold;
 }
 
 .header {
@@ -52,11 +53,6 @@ button {
 }
 
 @media (max-width: 800px) {
-  .question {
-    font-size: 28px;
-    max-width: 600px;
-  }
-
   .header h1 {
     font-size: 32px;
   }
@@ -68,6 +64,10 @@ button {
   .question{
     font-size: 24px;
     max-width: 400px; 
+  }
+
+  .answer{
+    font-size: 24px;
   }
 }
 
@@ -88,6 +88,7 @@ button {
   }
 
   .answer {
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: bold;
   }
 }
