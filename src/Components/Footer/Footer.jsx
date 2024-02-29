@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
         <div className="footer-media">
           <a rel='noopener noreferrer' href="https://www.linkedin.com/in/francis-nguyen-0a6902208/" target='_blank'><img src={linkedin} alt="" /></a>
-          <a rel='noopener noreferrer' href="https://github.com/nguyenfrancis6" target='_blank'><img src={github} alt="" /></a>
+          <a rel='noopener noreferrer' href="https://github.com/nguyenfrancis6/pokemon" target='_blank'><img src={github} alt="" /></a>
         </div>
         <hr />
       </div>
