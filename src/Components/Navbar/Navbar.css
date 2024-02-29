@@ -27,3 +27,9 @@
 hr {
   border: 1px white solid;
 }
+
+@media(max-width: 576px){
+  .nav-logo-img {
+    max-width: 120px;
+  }
+}
