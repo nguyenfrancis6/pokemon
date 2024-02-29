@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './Components/Navbar/Navbar.css'
 import Home from "./Pages/Home";
 import Browse from "./Pages/Browse";
@@ -13,9 +13,13 @@ import exit from './assets/exit.png'
 
 function App() {
   const [color, setColor] = useState(
-    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
+    localStorage.getItem('backgroundColor') || "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
   );
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    localStorage.setItem("backgroundColor", color);
+  }, [color]);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
