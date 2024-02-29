@@ -9,6 +9,9 @@
 
 .nav-toggle {
   display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-toggle img {
@@ -28,4 +31,47 @@
 
 .nav-menu.open {
   display: block;
+}
+
+.nav-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(63, 63, 63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+.nav-list-modal {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item-modal {
+  color: white;
+  font-size: 48px;
+}
+
+.nav-list-modal li {
+  margin-bottom: 75px;
+}
+
+.exit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.exit img {
+  height: 70px;
+  width: 70px;
+  filter: invert(100%);
 }

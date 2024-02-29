@@ -9,15 +9,26 @@ import Footer from "./Components/Footer/Footer";
 import { Link } from "react-router-dom";
 import pokemon_logo from "./assets/pokemon_logo.png";
 import hamburger from './assets/hamburger.png'
+import exit from './assets/exit.png'
 
 function App() {
   const [color, setColor] = useState(
     "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
   );
-  const [isNavOpen, setIsNavOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  }
+
+  const redExit = () => {
+    setColor("linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))")
+    setIsModalOpen(!isModalOpen)
+  }
+
+  const blueExit = () => {
+    setColor("linear-gradient(#6da6f1, #e2e2e7)")
+    setIsModalOpen(!isModalOpen)
   }
 
   return (
@@ -27,10 +38,46 @@ function App() {
           <div className="nav-logo">
             <img className="nav-logo-img" src={pokemon_logo} alt="" />
           </div>
-          <button className="nav-toggle" onClick={toggleNav}>
+          <button className="nav-toggle" onClick={toggleModal}>
             <img src={hamburger} alt="hamburger icon"/>
           </button>
-          <div className={`nav-menu ${isNavOpen ?  'open' : ''}`}>
+          <div className={`nav-menu ${isModalOpen ?  'open' : ''}`}>
+          {isModalOpen && (
+            <div className="nav-modal">
+              <button className="exit">
+                <img src={exit} alt="exit button" onClick={toggleModal}/>
+              </button>
+              <ul className="nav-list-modal">
+                <li>
+                  <Link
+                    to="/"
+                    className="nav-item-modal"
+                    onClick={() => redExit()}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/browse"
+                    className="nav-item-modal"
+                    onClick={() => redExit()}
+                  >
+                    Browse
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/trivia"
+                    className="nav-item-modal"
+                    onClick={() => blueExit()}
+                  >
+                    Trivia
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
             <ul className="nav-list">
               <Link
                 to="/"
