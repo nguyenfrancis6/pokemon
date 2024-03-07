@@ -21,7 +21,9 @@ const Browse = () => {
       setNextPageUrl(res.data.next);
       setPrevPageUrl(res.data.previous);
       getPokemon(res.data.results);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 300);
     };
 
     pokeFun();
@@ -55,13 +57,17 @@ const Browse = () => {
         <div className="loader"></div>
       ) : (
         <>
-        <Pagination
-          goToNextPage={nextPageUrl ? goToNextPage : null}
-          goToPrevPage={prevPageUrl ? goToPrevPage : null}
-        />
-        <div className="card-container">
-          <PokemonCard className="card" pokemon={pokeData} loading={loading} />
-        </div>
+          <Pagination
+            goToNextPage={nextPageUrl ? goToNextPage : null}
+            goToPrevPage={prevPageUrl ? goToPrevPage : null}
+          />
+          <div className="card-container">
+            <PokemonCard
+              className="card"
+              pokemon={pokeData}
+              loading={loading}
+            />
+          </div>
         </>
       )}
     </div>
