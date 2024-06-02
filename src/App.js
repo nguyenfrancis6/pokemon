@@ -12,27 +12,37 @@ import hamburger from './assets/hamburger.png'
 import exit from './assets/exit.png'
 
 function App() {
-  const [color, setColor] = useState(
-    localStorage.getItem('backgroundColor') || "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
-  );
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const defaultColor = "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))";
+  const triviaColor = "linear-gradient(#6da6f1, #e2e2e7)";
+  
+  const [color, setColor] = useState(localStorage.getItem('backgroundColor') || defaultColor);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("backgroundColor", color);
   }, [color]);
+
+  useEffect(() => {
+    // Set color based on initial path
+    if (window.location.pathname === "/trivia") {
+      setColor(triviaColor);
+    } else {
+      setColor(defaultColor);
+    }
+  }, []);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   }
 
   const redExit = () => {
-    setColor("linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))")
-    setIsModalOpen(!isModalOpen)
+    setColor(defaultColor);
+    setIsModalOpen(!isModalOpen);
   }
 
   const blueExit = () => {
-    setColor("linear-gradient(#6da6f1, #e2e2e7)")
-    setIsModalOpen(!isModalOpen)
+    setColor(triviaColor);
+    setIsModalOpen(!isModalOpen);
   }
 
   return (
@@ -40,7 +50,7 @@ function App() {
       <Router>
         <nav className="nav">
           <div className="nav-logo">
-            <img className="nav-logo-img" src={pokemon_logo} alt="" />
+            <img className="nav-logo-img" src={pokemon_logo} alt="pokemon logo" />
           </div>
           <button className="nav-toggle" onClick={toggleModal}>
             <img src={hamburger} alt="hamburger icon"/>
@@ -48,15 +58,15 @@ function App() {
           <div className={`nav-menu ${isModalOpen ?  'open' : ''}`}>
           {isModalOpen && (
             <div className="nav-modal">
-              <button className="exit">
-                <img src={exit} alt="exit button" onClick={toggleModal}/>
+              <button className="exit" onClick={toggleModal}>
+                <img src={exit} alt="exit button"/>
               </button>
               <ul className="nav-list-modal">
                 <li>
                   <Link
                     to="/"
                     className="nav-item-modal"
-                    onClick={() => redExit()}
+                    onClick={redExit}
                   >
                     Home
                   </Link>
@@ -65,7 +75,7 @@ function App() {
                   <Link
                     to="/browse"
                     className="nav-item-modal"
-                    onClick={() => redExit()}
+                    onClick={redExit}
                   >
                     Browse
                   </Link>
@@ -74,7 +84,7 @@ function App() {
                   <Link
                     to="/trivia"
                     className="nav-item-modal"
-                    onClick={() => blueExit()}
+                    onClick={blueExit}
                   >
                     Trivia
                   </Link>
@@ -86,29 +96,21 @@ function App() {
               <Link
                 to="/"
                 className="nav-item"
-                onClick={() =>
-                  setColor(
-                    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
-                  )
-                }
+                onClick={() => setColor(defaultColor)}
               >
                 Home
               </Link>
               <Link
                 to="/browse"
                 className="nav-item"
-                onClick={() =>
-                  setColor(
-                    "linear-gradient(rgba(247,34,34,1), rgba(247,34,34,0.3))"
-                  )
-                }
+                onClick={() => setColor(defaultColor)}
               >
                 Browse
               </Link>
               <Link
                 to="/trivia"
                 className="nav-item"
-                onClick={() => setColor("linear-gradient(#6da6f1, #e2e2e7)")}
+                onClick={() => setColor(triviaColor)}
               >
                 Trivia
               </Link>
