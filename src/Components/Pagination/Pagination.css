@@ -60,5 +60,6 @@
 @media (max-width: 576px) {
   .buttons {
     max-width: 350px;
+    margin: 0 5px;
   }
 }

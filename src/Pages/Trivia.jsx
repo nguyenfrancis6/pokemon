@@ -3,7 +3,12 @@ import Questions from '../Components/Questions/Questions'
 
 const Trivia = () => {
   return (
-    <div>
+    <div style={{minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
       <Questions/>
     </div>
   )

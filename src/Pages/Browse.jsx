@@ -51,7 +51,7 @@ const Browse = () => {
   }
 
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <h1 className="title">View All Pokémon!</h1>
       {loading ? (
         <div className="loader"></div>
